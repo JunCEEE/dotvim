@@ -25,3 +25,6 @@
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
+[submodule "bundle/Visual-Mark"]
+	path = bundle/Visual-Mark
+	url = git://github.com/vim-scripts/Visual-Mark.git
