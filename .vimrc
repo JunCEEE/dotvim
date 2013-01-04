@@ -24,3 +24,6 @@ nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>
 nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap <C-_>i :cs find i <C-R>=expand("<cfile>")<CR><CR>
 nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+set autochdir               " 自动切换当前目录为当前文件所在的目录
+nnoremap <silent> <F11> :YRShow<CR>
+

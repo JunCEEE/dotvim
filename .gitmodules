@@ -28,3 +28,9 @@
 [submodule "bundle/Visual-Mark"]
 	path = bundle/Visual-Mark
 	url = git://github.com/vim-scripts/Visual-Mark.git
+[submodule "bundle/mru"]
+	path = bundle/mru
+	url = git://github.com/vim-scripts/mru.vim.git
+[submodule "bundle/yankring"]
+	path = bundle/yankring
+	url = git://github.com/vim-scripts/YankRing.vim.git
