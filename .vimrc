@@ -1,7 +1,7 @@
 set nu
 set shiftwidth=4
 set ts=4 "set the number of space of <tab>
-colorscheme molokai 
+colorscheme darkblue 
 set laststatus=2 
 syntax on
 set cursorline
@@ -9,7 +9,7 @@ call pathogen#infect()
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 set fileencoding=utf-8
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set fileencodings=ucs-bom,utf-8,shift-jis,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 let g:neocomplcache_enable_at_startup = 1
 filetype plugin on
 nmap <Leader>f :NERDTree<CR>
@@ -220,3 +220,5 @@ func! Run()
         echohl WarningMsg | echo " running finish"
     endif
 endfunc
+source $VIMRUNTIME/macros/matchit.vim
+filetype indent on
