@@ -34,3 +34,21 @@
 [submodule "bundle/yankring"]
 	path = bundle/yankring
 	url = git://github.com/vim-scripts/YankRing.vim.git
+[submodule "autonumbering-in-vim"]
+	path = autonumbering-in-vim
+	url = https://github.com/vim-scripts/autonumbering-in-vim.git
+[submodule "bundle/autonum"]
+	path = bundle/autonum
+	url = https://github.com/vim-scripts/autonumbering-in-vim.git
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "vimwiki"]
+	path = vimwiki
+	url = git://github.com/vim-scripts/vimwiki.git
+[submodule "bundle/vimwiki"]
+	path = bundle/vimwiki
+	url = git://github.com/vim-scripts/vimwiki.git
+[submodule "bundle/vim-colors-solarized"]
+	path = bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
