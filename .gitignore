@@ -1,1 +1,3 @@
-.netrwhist
+*.netrwhist
+*.swp
+*.DS_Store

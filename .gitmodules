@@ -52,3 +52,12 @@
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/guicolorscheme"]
+	path = bundle/guicolorscheme
+	url = https://github.com/vim-scripts/guicolorscheme.vim.git
+[submodule "bundle/CSApprox"]
+	path = bundle/CSApprox
+	url = https://github.com/vim-scripts/CSApprox.git
+[submodule "bundle/ShowMarks"]
+	path = bundle/ShowMarks
+	url = https://github.com/vim-scripts/ShowMarks.git
