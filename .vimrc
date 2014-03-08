@@ -13,6 +13,11 @@ set smartcase
 set shiftwidth=4
 set ts=4 "set the number of space of <tab>
 
+"SHOWMARKS
+let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+let showmarks_hlline_lower = 1
+let showmarks_hlline_upper = 1
+
 "LAYOUT
 set laststatus=2 
 set background=dark
@@ -20,13 +25,10 @@ set cursorline
 set t_Co=256
 colorscheme solarized
 
+
 "MRU
 nmap mru :MRU<CR>
 
-"SHOWMARKS
-let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-let showmarks_hlline_lower = 1
-let showmarks_hlline_upper = 1
 
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,shift-jis,cp936,gb18030,big5,euc-jp,euc-kr,latin1
