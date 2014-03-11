@@ -22,8 +22,8 @@ let showmarks_hlline_upper = 1
 set laststatus=2 
 set background=dark
 set cursorline
-set t_Co=256
-colorscheme solarized
+"set t_Co=256
+
 
 
 "MRU
@@ -34,7 +34,7 @@ set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,shift-jis,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 let g:neocomplcache_enable_at_startup = 1
 nmap <Leader>f :NERDTree<CR>
-let g:tagbar_ctags_bin='/usr/local/bin/ctags'  " Proper Ctags locations
+let g:tagbar_ctags_bin='/usr/bin/ctags'  " Proper Ctags locations
 nmap tb :TagbarToggle<CR>
 command Cdpwd :cd %:h
 "cscope
@@ -64,3 +64,12 @@ let g:vimwiki_camel_case = 0
 
 map <F5> <Plug>Vimwiki2HTML
 nmap <F4> :VimwikiAll2HTML<CR>
+
+"colorscheme
+if has("gui_running")
+colorscheme solarized
+else
+colorscheme darkblue
+endif
+
+set autochdir

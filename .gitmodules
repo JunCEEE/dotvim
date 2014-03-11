@@ -61,3 +61,6 @@
 [submodule "bundle/ShowMarks"]
 	path = bundle/ShowMarks
 	url = https://github.com/vim-scripts/ShowMarks.git
+[submodule "bundle/bufexplorer"]
+	path = bundle/bufexplorer
+	url = https://github.com/c9s/bufexplorer.git
