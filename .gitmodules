@@ -64,3 +64,9 @@
 [submodule "bundle/bufexplorer"]
 	path = bundle/bufexplorer
 	url = https://github.com/c9s/bufexplorer.git
+[submodule "fortran.vim"]
+	path = fortran.vim
+	url = https://github.com/vim-scripts/fortran.vim.git
+[submodule "bundle/fortran"]
+	path = bundle/fortran
+	url = https://github.com/vim-scripts/fortran.vim.git
