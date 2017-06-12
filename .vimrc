@@ -50,11 +50,12 @@ set foldmethod=syntax
 
 
 "LAYOUT
-
+syntax enable
+colorscheme solarized
 set laststatus=2 
 set background=dark
 set cursorline
-set t_Co=256
+"set t_Co=256
 
 
 "filecoding
@@ -68,7 +69,7 @@ let g:neocomplcache_enable_at_startup = 1
 nmap <Leader>f :NERDTree<CR>
 
 "Ctag
-let g:tagbar_ctags_bin='/usr/local/bin/ctags'  " Proper Ctags locations
+let g:tagbar_ctags_bin='/usr/bin/ctags'  " Proper Ctags locations
 
 "Tagbar
 nmap tb :TagbarToggle<CR>
