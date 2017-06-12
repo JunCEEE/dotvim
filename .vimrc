@@ -50,7 +50,7 @@ set foldmethod=syntax
 
 
 "LAYOUT
-colorscheme darkblue
+
 set laststatus=2 
 set background=dark
 set cursorline
