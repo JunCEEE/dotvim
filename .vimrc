@@ -3,6 +3,9 @@ call pathogen#infect()
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+"param
+au BufNewFile,BufRead,BufReadPost *.param set filetype=cpp
+
 "Basic setup
 set nocompatible
 set autoindent
@@ -46,12 +49,12 @@ let fortran_do_enddo=1
 let fortran_have_tabs=1
 let fortran_fold=1
 let fortran_fold_conditionals=1
-set foldmethod=syntax
+"set foldmethod=syntax
 
 
 "LAYOUT
 syntax enable
-colorscheme solarized
+colorscheme darkblue
 set laststatus=2 
 set background=dark
 set cursorline
@@ -69,7 +72,7 @@ let g:neocomplcache_enable_at_startup = 1
 nmap <Leader>f :NERDTree<CR>
 
 "Ctag
-let g:tagbar_ctags_bin='/usr/bin/ctags'  " Proper Ctags locations
+let g:tagbar_ctags_bin='~/bin/ctags'  " Proper Ctags locations
 
 "Tagbar
 nmap tb :TagbarToggle<CR>
