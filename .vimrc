@@ -5,13 +5,25 @@ call pathogen#helptags()
 
 "param
 au BufNewFile,BufRead,BufReadPost *.param set filetype=cpp
+au BufNewFile,BufRead,BufReadPost *.kernel set filetype=cpp
 
 "backspace on Mac
 set backspace=indent,eol,start
 
+"airline buffer
+let g:airline#extensions#tabline#enabled = 1
+" Close the current buffer and move to the previous one
+nmap <leader>bq :bp <BAR> bd #<CR>
+" Move to the next buffer
+nmap <leader>l :bnext<CR>
+" Move to the previous buffer
+nmap <leader>h :bprevious<CR>
+
 "gutentags
 let g:gutentags_ctags_executable='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 let g:gutentags_modules = ['ctags', 'gtags_cscope']
+let g:gutentags_project_root = ['.root']
+let g:gutentags_cache_dir = ".root"
 
 "Basic setup
 set nocompatible
@@ -92,11 +104,12 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-
 "jump in cw indow
 nmap <C-n> :cnext<CR>
 "key bind
-nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-nmap <C-_>i :cs find i <C-R>=expand("<cfile>")<CR><CR>
-nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+nmap <leader>ss :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <leader>sg :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <leader>sc :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <leader>st :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <leader>se :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <leader>sf :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <leader>si :cs find i <C-R>=expand("<cfile>")<CR><CR>
+nmap <leader>sd :cs find d <C-R>=expand("<cword>")<CR><CR>
+nmap <leader>sa :cs find a <C-R>=expand("<cword>")<CR><CR>
