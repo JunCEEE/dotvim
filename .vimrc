@@ -6,6 +6,13 @@ call pathogen#helptags()
 "param
 au BufNewFile,BufRead,BufReadPost *.param set filetype=cpp
 
+"backspace on Mac
+set backspace=indent,eol,start
+
+"gutentags
+let g:gutentags_ctags_executable='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
+let g:gutentags_modules = ['ctags', 'gtags_cscope']
+
 "Basic setup
 set nocompatible
 set autoindent
@@ -51,7 +58,6 @@ let fortran_fold=1
 let fortran_fold_conditionals=1
 "set foldmethod=syntax
 
-
 "LAYOUT
 syntax enable
 colorscheme darkblue
@@ -72,7 +78,7 @@ let g:neocomplcache_enable_at_startup = 1
 nmap <Leader>f :NERDTree<CR>
 
 "Ctag
-let g:tagbar_ctags_bin='~/bin/ctags'  " Proper Ctags locations
+let g:tagbar_ctags_bin='/usr/local/Cellar/ctags/5.8_1/bin/ctags'  " Proper Ctags locations
 
 "Tagbar
 nmap tb :TagbarToggle<CR>
@@ -83,6 +89,9 @@ command Cdpwd :cd %:h
 "cscope
 set cscopetag cscopeverbose
 set cscopequickfix=s-,c-,d-,i-,t-,e-
+"jump in cw indow
+nmap <C-n> :cnext<CR>
+"key bind
 nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
 nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
 nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>
