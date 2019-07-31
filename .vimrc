@@ -15,12 +15,12 @@ let g:airline#extensions#tabline#enabled = 1
 " Close the current buffer and move to the previous one
 nmap <leader>bq :bp <BAR> bd #<CR>
 " Move to the next buffer
-nmap <leader>l :bnext<CR>
+nmap <leader>] :bnext<CR>
 " Move to the previous buffer
-nmap <leader>h :bprevious<CR>
+nmap <leader>[ :bprevious<CR>
 
 "gutentags
-let g:gutentags_ctags_executable='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
+let g:gutentags_ctags_executable='~/miniconda3/bin/ctags'
 let g:gutentags_modules = ['ctags', 'gtags_cscope']
 let g:gutentags_project_root = ['.root']
 let g:gutentags_cache_dir = ".root"
@@ -90,7 +90,7 @@ let g:neocomplcache_enable_at_startup = 1
 nmap <Leader>f :NERDTree<CR>
 
 "Ctag
-let g:tagbar_ctags_bin='/usr/local/Cellar/ctags/5.8_1/bin/ctags'  " Proper Ctags locations
+let g:tagbar_ctags_bin='~/miniconda3/bin/ctags'  " Proper Ctags locations
 
 "Tagbar
 nmap tb :TagbarToggle<CR>
@@ -103,13 +103,22 @@ set cscopetag cscopeverbose
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 "jump in cw indow
 nmap <C-n> :cnext<CR>
+nmap <C-m> :cp<CR>
 "key bind
+"Find this C symbol
 nmap <leader>ss :cs find s <C-R>=expand("<cword>")<CR><CR>
+"Find this definition
 nmap <leader>sg :cs find g <C-R>=expand("<cword>")<CR><CR>
+"Find functions called by this function
+nmap <leader>sd :cs find d <C-R>=expand("<cword>")<CR><CR>
+"Find functions calling this function
 nmap <leader>sc :cs find c <C-R>=expand("<cword>")<CR><CR>
+"Find this text string
 nmap <leader>st :cs find t <C-R>=expand("<cword>")<CR><CR>
 nmap <leader>se :cs find e <C-R>=expand("<cword>")<CR><CR>
+"Find this file
 nmap <leader>sf :cs find f <C-R>=expand("<cfile>")<CR><CR>
+"Find files #including this file
 nmap <leader>si :cs find i <C-R>=expand("<cfile>")<CR><CR>
-nmap <leader>sd :cs find d <C-R>=expand("<cword>")<CR><CR>
+"Find places where this symbol is assigned a value
 nmap <leader>sa :cs find a <C-R>=expand("<cword>")<CR><CR>
