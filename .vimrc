@@ -20,7 +20,7 @@ nmap <leader>] :bnext<CR>
 nmap <leader>[ :bprevious<CR>
 
 "gutentags
-let g:gutentags_ctags_executable='~/miniconda3/bin/ctags'
+"let g:gutentags_ctags_executable='ctags'
 let g:gutentags_modules = ['ctags', 'gtags_cscope']
 let g:gutentags_project_root = ['.root']
 let g:gutentags_cache_dir = ".root"
@@ -90,7 +90,7 @@ let g:neocomplcache_enable_at_startup = 1
 nmap <Leader>f :NERDTree<CR>
 
 "Ctag
-let g:tagbar_ctags_bin='~/miniconda3/bin/ctags'  " Proper Ctags locations
+"let g:tagbar_ctags_bin='ctags'  " Proper Ctags locations
 
 "Tagbar
 nmap tb :TagbarToggle<CR>
