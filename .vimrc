@@ -103,7 +103,8 @@ set cscopetag cscopeverbose
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 "jump in cw indow
 nmap <C-n> :cnext<CR>
-nmap <C-m> :cp<CR>
+"No cp because of conflicts
+"nmap <C-m> :cp<CR>
 "key bind
 "Find this C symbol
 nmap <leader>ss :cs find s <C-R>=expand("<cword>")<CR><CR>
