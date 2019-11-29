@@ -22,8 +22,8 @@ nmap <leader>[ :bprevious<CR>
 "gutentags
 "let g:gutentags_ctags_executable='ctags'
 let g:gutentags_modules = ['ctags', 'gtags_cscope']
-let g:gutentags_project_root = ['.root']
-let g:gutentags_cache_dir = ".root"
+let g:gutentags_project_root = ['.git']
+let g:gutentags_cache_dir = ".tags"
 
 "Basic setup
 set nocompatible
@@ -72,12 +72,25 @@ let fortran_fold_conditionals=1
 
 "LAYOUT
 syntax enable
-colorscheme darkblue
+"colorscheme darkblue
 set laststatus=2 
 set background=dark
 set cursorline
 "set t_Co=256
 
+"Enable true color
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+"ayu-vim
+set termguicolors     " enable true colors support
+"let ayucolor="light"  " for light version of theme
+"let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
 
 "filecoding
 set fileencoding=utf-8
@@ -123,3 +136,4 @@ nmap <leader>sf :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap <leader>si :cs find i <C-R>=expand("<cfile>")<CR><CR>
 "Find places where this symbol is assigned a value
 nmap <leader>sa :cs find a <C-R>=expand("<cword>")<CR><CR>
+
