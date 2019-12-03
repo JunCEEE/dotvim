@@ -137,3 +137,8 @@ nmap <leader>si :cs find i <C-R>=expand("<cfile>")<CR><CR>
 "Find places where this symbol is assigned a value
 nmap <leader>sa :cs find a <C-R>=expand("<cword>")<CR><CR>
 
+"flake8
+let g:flake8_show_in_gutter=1
+
+"clipboard
+command Clip set clipboard=unnamed
