@@ -37,9 +37,6 @@
 [submodule "bundle/autonum"]
 	path = bundle/autonum
 	url = https://github.com/vim-scripts/autonumbering-in-vim.git
-[submodule "bundle/vim-markdown"]
-	path = bundle/vim-markdown
-	url = https://github.com/plasticboy/vim-markdown.git
 [submodule "vimwiki"]
 	path = vimwiki
 	url = git://github.com/vim-scripts/vimwiki.git
