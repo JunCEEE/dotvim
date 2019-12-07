@@ -7,7 +7,7 @@ call pathogen#helptags()
 au BufNewFile,BufRead,BufReadPost *.param set filetype=cpp
 au BufNewFile,BufRead,BufReadPost *.kernel set filetype=cpp
 
-"backspace on Mac
+"backspace on OSX
 set backspace=indent,eol,start
 
 "airline buffer
@@ -24,6 +24,29 @@ nmap <leader>[ :bprevious<CR>
 let g:gutentags_modules = ['ctags', 'gtags_cscope']
 let g:gutentags_project_root = ['.git']
 let g:gutentags_cache_dir = ".tags"
+" statusline
+let g:airline#extensions#gutentags#status = 1
+" change focus to quickfix window after search (optional).
+let g:gutentags_plus_switch = 1
+"Find this C symbol
+noremap <silent> <leader>ss :GscopeFind s <C-R><C-W><cr>
+"Find this definition
+noremap <silent> <leader>sg :GscopeFind g <C-R><C-W><cr>
+"Find places where this symbol is assigned a value
+noremap <silent> <leader>sa :GscopeFind a <C-R><C-W><cr>
+"Find functions called by this function
+noremap <silent> <leader>sd :GscopeFind d <C-R><C-W><cr>
+"Find functions calling this function
+noremap <silent> <leader>sc :GscopeFind c <C-R><C-W><cr>
+"Find this text string
+noremap <silent> <leader>st :GscopeFind t <C-R><C-W><cr>
+noremap <silent> <leader>se :GscopeFind e <C-R><C-W><cr>
+"Find this file
+noremap <silent> <leader>sf :GscopeFind f <C-R>=expand("<cfile>")<cr><cr>
+"Find files #including this file
+noremap <silent> <leader>si :GscopeFind i <C-R>=expand("<cfile>")<cr><cr>
+
+
 
 "Basic setup
 set nocompatible
@@ -52,7 +75,25 @@ if s:extfname==? "py"
 	set softtabstop=4   " Sets the number of columns for a TAB
 
 	set expandtab       " Expand TABs to spaces
+	" jedi
+	let g:jedi#goto_command = "<leader>sg"
+	let g:jedi#goto_assignments_command = "<leader>sa"
+	let g:jedi#goto_definitions_command = ""
+	let g:jedi#documentation_command = "K"
+	let g:jedi#usages_command = "<leader>sc"
+    "let g:jedi#completions_command = "<C-Space>"
+    let g:jedi#completions_command = ""
+	let g:jedi#rename_command = "<leader>r"
 endif
+"Jedi-vim
+" Disable Jedi-vim autocompletion and enable call-signatures options
+let g:jedi#auto_initialization = 1
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#smart_auto_mappings = 0
+let g:jedi#popup_on_dot = 0
+let g:jedi#completions_command = ""
+let g:jedi#show_call_signatures = "1"
 
 "fortran
 let s:extfname= expand("%:e")
@@ -96,8 +137,7 @@ colorscheme ayu
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,shift-jis,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
-"Neocomplcache
-let g:neocomplcache_enable_at_startup = 1
+
 
 "NERDTree
 nmap <Leader>f :NERDTree<CR>
@@ -111,34 +151,71 @@ nmap tb :TagbarToggle<CR>
 "PATH change
 command Cdpwd :cd %:h
 
-"cscope
-set cscopetag cscopeverbose
-set cscopequickfix=s-,c-,d-,i-,t-,e-
+"Quick fix
 "jump in cw indow
 nmap <C-n> :cnext<CR>
-"No cp because of conflicts
-"nmap <C-m> :cp<CR>
+"Not cp because of conflicts
+nmap <C-k> :cp<CR>
+"cscope
+"set cscopetag cscopeverbose
+"set cscopequickfix=s-,c-,d-,i-,t-,e-
 "key bind
 "Find this C symbol
-nmap <leader>ss :cs find s <C-R>=expand("<cword>")<CR><CR>
+"nmap <leader>ss :cs find s <C-R>=expand("<cword>")<CR><CR>
 "Find this definition
-nmap <leader>sg :cs find g <C-R>=expand("<cword>")<CR><CR>
+"nmap <leader>sg :cs find g <C-R>=expand("<cword>")<CR><CR>
 "Find functions called by this function
-nmap <leader>sd :cs find d <C-R>=expand("<cword>")<CR><CR>
+"nmap <leader>sd :cs find d <C-R>=expand("<cword>")<CR><CR>
 "Find functions calling this function
-nmap <leader>sc :cs find c <C-R>=expand("<cword>")<CR><CR>
+"nmap <leader>sc :cs find c <C-R>=expand("<cword>")<CR><CR>
 "Find this text string
-nmap <leader>st :cs find t <C-R>=expand("<cword>")<CR><CR>
-nmap <leader>se :cs find e <C-R>=expand("<cword>")<CR><CR>
+"nmap <leader>st :cs find t <C-R>=expand("<cword>")<CR><CR>
+"nmap <leader>se :cs find e <C-R>=expand("<cword>")<CR><CR>
 "Find this file
-nmap <leader>sf :cs find f <C-R>=expand("<cfile>")<CR><CR>
+"nmap <leader>sf :cs find f <C-R>=expand("<cfile>")<CR><CR>
 "Find files #including this file
-nmap <leader>si :cs find i <C-R>=expand("<cfile>")<CR><CR>
+"nmap <leader>si :cs find i <C-R>=expand("<cfile>")<CR><CR>
 "Find places where this symbol is assigned a value
-nmap <leader>sa :cs find a <C-R>=expand("<cword>")<CR><CR>
+"nmap <leader>sa :cs find a <C-R>=expand("<cword>")<CR><CR>
 
 "flake8
 let g:flake8_show_in_gutter=1
 
 "clipboard
 command Clip set clipboard=unnamed
+
+"jupyter-vim
+
+if has('nvim')
+	" OSX
+	let g:python3_host_prog = '/Users/juncheng/miniconda3/bin/python3'
+else
+	set pyxversion=3
+
+	" OSX
+	"set pythonthreedll=/Library/Frameworks/Python.framework/Versions/3.6/Python
+	set pythonthreedll=/Users/juncheng/miniconda3/bin/python3
+endif
+
+"vim-latex
+" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
+filetype plugin on
+
+" IMPORTANT: win32 users will need to have 'shellslash' set so that latex
+" can be called correctly.
+set shellslash
+
+" OPTIONAL: This enables automatic indentation as you type.
+filetype indent on
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
+
+" ncm2
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+" IMPORTANT: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
+
