@@ -198,6 +198,9 @@ else
 endif
 
 "vim-latex
+" Do bibtex after latex
+let g:Tex_MultipleCompileFormats='dvi,pdf' 
+
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
 
