@@ -205,7 +205,9 @@ autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect
 
 "vim-latex
+"OSX
 let g:Tex_ViewRule_pdf = 'skim'
+
 " Do bibtex after latex
 let g:Tex_MultipleCompileFormats='dvi,pdf' 
 
