@@ -18,6 +18,8 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 nmap <leader>] :bnext<CR>
 " Move to the previous buffer
 nmap <leader>[ :bprevious<CR>
+" Unload the previous buffer
+nmap <leader>q :bd<CR>
 
 "gutentags
 "let g:gutentags_ctags_executable='ctags'
@@ -185,7 +187,6 @@ let g:flake8_show_in_gutter=1
 command Clip set clipboard=unnamed
 
 "jupyter-vim
-
 if has('nvim')
 	" OSX
 	let g:python3_host_prog = '/Users/juncheng/miniconda3/bin/python3'
@@ -197,16 +198,16 @@ else
 	set pythonthreedll=/Users/juncheng/miniconda3/bin/python3
 endif
 
+" ncm2
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+" IMPORTANT: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
+
 "vim-latex
+let g:Tex_ViewRule_pdf = 'skim'
 " Do bibtex after latex
 let g:Tex_MultipleCompileFormats='dvi,pdf' 
-
-" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
-filetype plugin on
-
-" IMPORTANT: win32 users will need to have 'shellslash' set so that latex
-" can be called correctly.
-set shellslash
 
 " OPTIONAL: This enables automatic indentation as you type.
 filetype indent on
@@ -215,10 +216,16 @@ filetype indent on
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
-
-" ncm2
-" enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
-" IMPORTANT: :help Ncm2PopupOpen for more information
-set completeopt=noinsert,menuone,noselect
-
+" this is mostly a matter of taste. but LaTeX looks good with just a bit
+" of indentation.
+let s:extfname= expand("%:e")
+if s:extfname==? "tex"
+	if empty(v:servername) && exists('*remote_startserver')
+		call remote_startserver('VIM')
+	endif
+	set sw=2
+	" TIP: if you write your \label's as \label{fig:something}, then if you
+	" type in \ref{fig: and press <C-n> you will automatically cycle through
+	" all the figure labels. Very useful!
+	set iskeyword+=:
+endif

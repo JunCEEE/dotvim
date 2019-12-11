@@ -1,2 +1,2 @@
 set clipboard=unnamed
-set guifont=Monaco:h12
+"set guifont=Monaco:h12

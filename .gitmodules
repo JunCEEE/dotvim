@@ -82,9 +82,6 @@
 [submodule "bundle/jupyter-vim"]
 	path = bundle/jupyter-vim
 	url = https://github.com/jupyter-vim/jupyter-vim.git
-[submodule "bundle/vim-latex"]
-	path = bundle/vim-latex
-	url = git@github.com:vim-latex/vim-latex.git
 [submodule "bundle/nvim-yarp"]
 	path = bundle/nvim-yarp
 	url = git@github.com:roxma/nvim-yarp.git
@@ -106,3 +103,6 @@
 [submodule "bundle/gutentags_plus"]
 	path = bundle/gutentags_plus
 	url = git@github.com:skywind3000/gutentags_plus.git
+[submodule "bundle/vim-latex"]
+	path = bundle/vim-latex
+	url = https://github.com/vim-latex/vim-latex.git
