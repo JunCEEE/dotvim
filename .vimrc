@@ -16,8 +16,10 @@ let g:airline#extensions#tabline#enabled = 1
 nmap <leader>bq :bp <BAR> bd #<CR>
 " Move to the next buffer
 nmap <leader>] :bnext<CR>
+"nmap ]b :bnext<CR>
 " Move to the previous buffer
 nmap <leader>[ :bprevious<CR>
+"nmap [b :bprevious<CR>
 " Unload the previous buffer
 nmap <leader>q :bd<CR>
 
