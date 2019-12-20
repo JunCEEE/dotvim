@@ -187,18 +187,12 @@ let g:flake8_show_in_gutter=1
 command Clip set clipboard=unnamed
 
 "jupyter-vim
-if has('nvim')
-	" OSX
-	let g:python3_host_prog = '/Users/juncheng/miniconda3/bin/python3'
-else
-	set pyxversion=3
+set pyxversion=3
+"To set dynamic python
+"set pythonthreedll=/Library/Frameworks/Python.framework/Versions/3.6/Python
+"set pythonthreedll=/home/juncheng/.conda/envs/simex/bin/python3
 
-	" OSX
-	"set pythonthreedll=/Library/Frameworks/Python.framework/Versions/3.6/Python
-	set pythonthreedll=/Users/juncheng/miniconda3/bin/python3
-endif
-
-" ncm2
+"ncm2
 " enable ncm2 for all buffers
 autocmd BufEnter * call ncm2#enable_for_buffer()
 " IMPORTANT: :help Ncm2PopupOpen for more information
