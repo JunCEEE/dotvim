@@ -10,6 +10,10 @@ au BufNewFile,BufRead,BufReadPost *.kernel set filetype=cpp
 "backspace on OSX
 set backspace=indent,eol,start
 
+"dynamic python
+set pythonthreedll=/home/juncheng/miniconda3/lib/libpython3.7m.so.1.0
+set pythonthreehome=/home/juncheng/miniconda3
+
 "airline buffer
 let g:airline#extensions#tabline#enabled = 1
 " Close the current buffer and move to the previous one
@@ -190,9 +194,6 @@ command Clip set clipboard=unnamed
 
 "jupyter-vim
 set pyxversion=3
-"To set dynamic python
-"set pythonthreedll=/Library/Frameworks/Python.framework/Versions/3.6/Python
-"set pythonthreedll=/home/juncheng/.conda/envs/simex/bin/python3
 
 "ncm2
 " enable ncm2 for all buffers
