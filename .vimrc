@@ -11,8 +11,8 @@ au BufNewFile,BufRead,BufReadPost *.kernel set filetype=cpp
 set backspace=indent,eol,start
 
 "dynamic python
-set pythonthreedll=/home/juncheng/miniconda3/lib/libpython3.7m.so.1.0
-set pythonthreehome=/home/juncheng/miniconda3
+set pythonthreedll=/gpfs/exfel/data/user/juncheng/miniconda3/lib/libpython3.7m.so.1.0
+set pythonthreehome=/gpfs/exfel/data/user/juncheng/miniconda3
 
 "airline buffer
 let g:airline#extensions#tabline#enabled = 1
@@ -84,6 +84,7 @@ if s:extfname==? "py"
 
 	set expandtab       " Expand TABs to spaces
 	" jedi
+module load python/3.6
 	let g:jedi#goto_command = "<leader>sg"
 	let g:jedi#goto_assignments_command = "<leader>sa"
 	let g:jedi#goto_definitions_command = ""
@@ -200,6 +201,7 @@ set pyxversion=3
 autocmd BufEnter * call ncm2#enable_for_buffer()
 " IMPORTANT: :help Ncm2PopupOpen for more information
 set completeopt=noinsert,menuone,noselect
+let g:python3_host_prog='/gpfs/exfel/data/user/juncheng/miniconda3/bin/python3'
 
 "vim-latex
 "OSX
