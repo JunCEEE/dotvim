@@ -32,6 +32,7 @@ nmap <leader>q :bd<CR>
 let g:gutentags_modules = ['ctags', 'gtags_cscope']
 let g:gutentags_project_root = ['.git']
 let g:gutentags_cache_dir = ".tags"
+let g:gutentags_exclude_filetypes = ['python']
 " statusline
 let g:airline#extensions#gutentags#status = 1
 " change focus to quickfix window after search (optional).
@@ -84,7 +85,6 @@ if s:extfname==? "py"
 
 	set expandtab       " Expand TABs to spaces
 	" jedi
-module load python/3.6
 	let g:jedi#goto_command = "<leader>sg"
 	let g:jedi#goto_assignments_command = "<leader>sa"
 	let g:jedi#goto_definitions_command = ""
@@ -195,6 +195,9 @@ command Clip set clipboard=unnamed
 
 "jupyter-vim
 set pyxversion=3
+"edit  ~/.jupyter/jupyter_qtconsole_config.py
+"add this:
+"c.ConsoleWidget.include_other_output = True
 
 "ncm2
 " enable ncm2 for all buffers
