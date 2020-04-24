@@ -11,8 +11,13 @@ au BufNewFile,BufRead,BufReadPost *.kernel set filetype=cpp
 set backspace=indent,eol,start
 
 "dynamic python
-set pythonthreedll=/gpfs/exfel/data/user/juncheng/miniconda3/lib/libpython3.7m.so.1.0
-set pythonthreehome=/gpfs/exfel/data/user/juncheng/miniconda3
+"set pythonthreedll=/gpfs/exfel/data/user/juncheng/miniconda3/lib/libpython3.7m.so.1.0
+"set pythonthreehome=/gpfs/exfel/data/user/juncheng/miniconda3
+
+"OSX
+set pythonthreedll=/Users/juncheng/miniconda3/lib/libpython3.6m.dylib
+set pythonthreehome=/Users/juncheng/miniconda3
+
 
 "airline buffer
 let g:airline#extensions#tabline#enabled = 1
@@ -204,7 +209,7 @@ set pyxversion=3
 autocmd BufEnter * call ncm2#enable_for_buffer()
 " IMPORTANT: :help Ncm2PopupOpen for more information
 set completeopt=noinsert,menuone,noselect
-let g:python3_host_prog='/gpfs/exfel/data/user/juncheng/miniconda3/bin/python3'
+let g:python3_host_prog='/Users/juncheng/miniconda3/bin/python3'
 
 "vim-latex
 "OSX
