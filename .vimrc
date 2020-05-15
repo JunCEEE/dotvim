@@ -155,7 +155,7 @@ nmap <Leader>f :NERDTree<CR>
 "let g:tagbar_ctags_bin='ctags'  " Proper Ctags locations
 
 "Tagbar
-nmap tb :TagbarToggle<CR>
+nmap tb :TagbarOpen fj<CR>
 
 "PATH change
 command Cdpwd :cd %:h
