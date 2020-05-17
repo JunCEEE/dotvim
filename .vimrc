@@ -4,7 +4,9 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 "param
-au BufNewFile,BufRead,BufReadPost *.param set filetype=cpp
+"PiCONGPU
+"au BufNewFile,BufRead,BufReadPost *.param set filetype=cpp
+au BufNewFile,BufRead,BufReadPost *.param set filetype=bash
 au BufNewFile,BufRead,BufReadPost *.kernel set filetype=cpp
 
 "backspace on OSX
@@ -95,19 +97,18 @@ if s:extfname==? "py"
 	let g:jedi#goto_definitions_command = ""
 	let g:jedi#documentation_command = "K"
 	let g:jedi#usages_command = "<leader>sc"
-    "let g:jedi#completions_command = "<C-Space>"
     let g:jedi#completions_command = ""
 	let g:jedi#rename_command = "<leader>r"
 endif
 "Jedi-vim
 " Disable Jedi-vim autocompletion and enable call-signatures options
-let g:jedi#auto_initialization = 1
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#smart_auto_mappings = 0
 let g:jedi#popup_on_dot = 0
 let g:jedi#completions_command = ""
-let g:jedi#show_call_signatures = "1"
+let g:jedi#show_call_signatures = 0
+let g:jedi#auto_initialization = 1
 
 "fortran
 let s:extfname= expand("%:e")
