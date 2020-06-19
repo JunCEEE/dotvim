@@ -20,6 +20,8 @@ set backspace=indent,eol,start
 set pythonthreedll=/Users/juncheng/miniconda3/lib/libpython3.6m.dylib
 set pythonthreehome=/Users/juncheng/miniconda3
 
+"markdown
+let g:vim_markdown_folding_disabled = 1
 
 "airline buffer
 let g:airline#extensions#tabline#enabled = 1
