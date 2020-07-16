@@ -14,12 +14,12 @@ set backspace=indent,eol,start
 
 "dynamic python
 "maxwell
-set pythonthreedll=/gpfs/exfel/data/user/juncheng/miniconda3/lib/libpython3.7m.so.1.0
-set pythonthreehome=/gpfs/exfel/data/user/juncheng/miniconda3
+"set pythonthreedll=/gpfs/exfel/data/user/juncheng/miniconda3/lib/libpython3.7m.so.1.0
+"set pythonthreehome=/gpfs/exfel/data/user/juncheng/miniconda3
 
 "OSX
-"set pythonthreedll=/Users/juncheng/miniconda3/lib/libpython3.6m.dylib
-"set pythonthreehome=/Users/juncheng/miniconda3
+set pythonthreedll=/Users/juncheng/miniconda3/lib/libpython3.6m.dylib
+set pythonthreehome=/Users/juncheng/miniconda3
 
 "markdown
 let g:vim_markdown_folding_disabled = 1
@@ -40,11 +40,13 @@ nmap <leader>q :bd<CR>
 "gutentags
 "let g:gutentags_ctags_executable='ctags'
 let g:gutentags_modules = ['ctags', 'gtags_cscope']
+"The identifier specifying  where to generate the 
 let g:gutentags_project_root = ['.git']
-let g:gutentags_cache_dir = ".tags"
+let g:gutentags_cache_dir = expand('~/.cache/vim/tags/')
 let g:gutentags_exclude_filetypes = ['python']
 " statusline
-let g:airline#extensions#gutentags#status = 1
+"let g:airline#extensions#gutentags#status = 1
+let g:airline#extensions#gutentags#enabled = 1
 " change focus to quickfix window after search (optional).
 let g:gutentags_plus_switch = 1
 "Find this C symbol
@@ -213,11 +215,11 @@ set pyxversion=3
 autocmd BufEnter * call ncm2#enable_for_buffer()
 " IMPORTANT: :help Ncm2PopupOpen for more information
 set completeopt=noinsert,menuone,noselect
-"maxwell
-let g:python3_host_prog='/gpfs/exfel/data/user/juncheng/miniconda3/bin/python3'
 
+"maxwell
+"let g:python3_host_prog='/gpfs/exfel/data/user/juncheng/miniconda3/bin/python3'
 "OSX
-"let g:python3_host_prog='/Users/juncheng/miniconda3/bin/python3'
+let g:python3_host_prog='/Users/juncheng/miniconda3/bin/python3'
 
 "vim-latex
 "OSX
