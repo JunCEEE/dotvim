@@ -44,7 +44,7 @@ nmap <leader>q :bd<CR>
 let g:gutentags_modules = ['ctags', 'gtags_cscope']
 let g:gutentags_project_root = ['.git']
 let g:gutentags_cache_dir = ".tags"
-let g:gutentags_exclude_filetypes = ['python']
+let g:gutentags_exclude_filetypes = ['python','sh']
 
 " Maxwell
 let g:gutentags_cache_dir = expand('/beegfs/desy/user/juncheng/.cache/vim/tags/')
