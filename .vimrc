@@ -15,11 +15,11 @@ set backspace=indent,eol,start
 "dynamic python
 
 "maxwell
-set pythonthreedll=/gpfs/exfel/data/user/juncheng/miniconda3/lib/libpython3.7m.so.1.0
-set pythonthreehome=/gpfs/exfel/data/user/juncheng/miniconda3
+"set pythonthreedll=/gpfs/exfel/data/user/juncheng/miniconda3/lib/libpython3.7m.so.1.0
+"set pythonthreehome=/gpfs/exfel/data/user/juncheng/miniconda3
 "OSX
-"set pythonthreedll=/Users/juncheng/miniconda3/lib/libpython3.6m.dylib
-"set pythonthreehome=/Users/juncheng/miniconda3
+set pythonthreedll=/Users/juncheng/miniconda3/lib/libpython3.7m.dylib
+set pythonthreehome=/Users/juncheng/miniconda3
 
 
 "airline buffer
@@ -47,9 +47,9 @@ let g:gutentags_cache_dir = ".tags"
 let g:gutentags_exclude_filetypes = ['python','sh']
 
 " Maxwell
-let g:gutentags_cache_dir = expand('/beegfs/desy/user/juncheng/.cache/vim/tags/')
+" let g:gutentags_cache_dir = expand('/beegfs/desy/user/juncheng/.cache/vim/tags/')
 " OSX
-"let g:gutentags_cache_dir = expand('~/.cache/vim/tags/')
+let g:gutentags_cache_dir = expand('~/.cache/vim/tags/')
 
 " statusline
 "let g:airline#extensions#gutentags#status = 1
@@ -183,27 +183,6 @@ command Cdpwd :cd %:h
 nmap <C-n> :cnext<CR>
 "Not cp because of conflicts
 nmap <C-k> :cp<CR>
-"cscope
-"set cscopetag cscopeverbose
-"set cscopequickfix=s-,c-,d-,i-,t-,e-
-"key bind
-"Find this C symbol
-"nmap <leader>ss :cs find s <C-R>=expand("<cword>")<CR><CR>
-"Find this definition
-"nmap <leader>sg :cs find g <C-R>=expand("<cword>")<CR><CR>
-"Find functions called by this function
-"nmap <leader>sd :cs find d <C-R>=expand("<cword>")<CR><CR>
-"Find functions calling this function
-"nmap <leader>sc :cs find c <C-R>=expand("<cword>")<CR><CR>
-"Find this text string
-"nmap <leader>st :cs find t <C-R>=expand("<cword>")<CR><CR>
-"nmap <leader>se :cs find e <C-R>=expand("<cword>")<CR><CR>
-"Find this file
-"nmap <leader>sf :cs find f <C-R>=expand("<cfile>")<CR><CR>
-"Find files #including this file
-"nmap <leader>si :cs find i <C-R>=expand("<cfile>")<CR><CR>
-"Find places where this symbol is assigned a value
-"nmap <leader>sa :cs find a <C-R>=expand("<cword>")<CR><CR>
 
 "flake8
 let g:flake8_show_in_gutter=1
@@ -212,10 +191,15 @@ let g:flake8_show_in_gutter=1
 command Clip set clipboard=unnamed
 
 "jupyter-vim
-set pyxversion=3
-"edit  ~/.jupyter/jupyter_qtconsole_config.py
-"add this:
-"c.ConsoleWidget.include_other_output = True
+"set pyxversion=3
+""edit  ~/.jupyter/jupyter_qtconsole_config.py
+""add this:
+""c.ConsoleWidget.include_other_output = True
+"let g:jupyter_mapkeys=0
+"noremap <localleader>R          :JupyterRunFile
+"noremap <localleader>I          :PythonImportThisFile
+"noremap <localleader>X          :JupyterSendCell
+"noremap <localleader>E          :JupyterSendRange
 
 "ncm2
 " enable ncm2 for all buffers
@@ -224,9 +208,9 @@ autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect
 
 "maxwell
-let g:python3_host_prog='/gpfs/exfel/data/user/juncheng/miniconda3/bin/python3'
+"let g:python3_host_prog='/gpfs/exfel/data/user/juncheng/miniconda3/bin/python3'
 "OSX
-"let g:python3_host_prog='/Users/juncheng/miniconda3/bin/python3'
+let g:python3_host_prog='/Users/juncheng/miniconda3/bin/python3'
 
 "vim-latex
 

@@ -79,9 +79,6 @@
 [submodule "bundle/vim-glaive"]
 	path = bundle/vim-glaive
 	url = git@github.com:google/vim-glaive.git
-[submodule "bundle/jupyter-vim"]
-	path = bundle/jupyter-vim
-	url = https://github.com/jupyter-vim/jupyter-vim.git
 [submodule "bundle/nvim-yarp"]
 	path = bundle/nvim-yarp
 	url = git@github.com:roxma/nvim-yarp.git
