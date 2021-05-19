@@ -1,3 +1,6 @@
+"vim for python virtual environment
+"conda create -n TEST_ENV vim jedi
+
 "PATHOGEN
 call pathogen#infect()
 call pathogen#runtime_append_all_bundles()
@@ -10,7 +13,7 @@ au BufNewFile,BufRead,BufReadPost *.param set filetype=bash
 au BufNewFile,BufRead,BufReadPost *.kernel set filetype=cpp
 
 "backspace on OSX
-set backspace=indent,eol,start
+"set backspace=indent,eol,start
 
 "dynamic python
 
@@ -18,8 +21,8 @@ set backspace=indent,eol,start
 "set pythonthreedll=/gpfs/exfel/data/user/juncheng/miniconda3/lib/libpython3.7m.so.1.0
 "set pythonthreehome=/gpfs/exfel/data/user/juncheng/miniconda3
 "OSX
-set pythonthreedll=/Users/juncheng/miniconda3/lib/libpython3.7m.dylib
-set pythonthreehome=/Users/juncheng/miniconda3
+"set pythonthreedll=/Users/juncheng/miniconda3/lib/libpython3.7m.dylib
+"set pythonthreehome=/Users/juncheng/miniconda3
 
 
 "airline buffer
@@ -48,8 +51,8 @@ let g:gutentags_exclude_filetypes = ['python','sh']
 
 " Maxwell
 " let g:gutentags_cache_dir = expand('/beegfs/desy/user/juncheng/.cache/vim/tags/')
-" OSX
-let g:gutentags_cache_dir = expand('~/.cache/vim/tags/')
+" OSX and Linux
+ let g:gutentags_cache_dir = expand('~/.cache/vim/tags/')
 
 " statusline
 "let g:airline#extensions#gutentags#status = 1
@@ -210,12 +213,12 @@ set completeopt=noinsert,menuone,noselect
 "maxwell
 "let g:python3_host_prog='/gpfs/exfel/data/user/juncheng/miniconda3/bin/python3'
 "OSX
-let g:python3_host_prog='/Users/juncheng/miniconda3/bin/python3'
+"let g:python3_host_prog='/Users/juncheng/miniconda3/bin/python3'
 
 "vim-latex
 
 "OSX
-let g:Tex_ViewRule_pdf = 'skim'
+"let g:Tex_ViewRule_pdf = 'skim'
 
 " Do bibtex after latex
 let g:Tex_MultipleCompileFormats='dvi,pdf' 
