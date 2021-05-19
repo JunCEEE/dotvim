@@ -1,6 +1,3 @@
-"vim for python virtual environment
-"conda create -n TEST_ENV vim jedi
-
 "PATHOGEN
 call pathogen#infect()
 call pathogen#runtime_append_all_bundles()

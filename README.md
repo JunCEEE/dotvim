@@ -14,6 +14,12 @@ sudo apt-get install global ctags
 conda install vim jedi yapf pynvim
 ```
 
+A new environment
+
+```bash
+conda create -n NEW_ENV vim jedi yapf pynvim
+```
+
 ## Installation
 Clone
 
