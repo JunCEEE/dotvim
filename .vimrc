@@ -9,8 +9,8 @@ call pathogen#helptags()
 au BufNewFile,BufRead,BufReadPost *.param set filetype=bash
 au BufNewFile,BufRead,BufReadPost *.kernel set filetype=cpp
 
-"backspace on OSX
-"set backspace=indent,eol,start
+"backspace on OSX/Maxwell
+set backspace=indent,eol,start
 
 "dynamic python
 
@@ -47,9 +47,9 @@ let g:gutentags_cache_dir = ".tags"
 let g:gutentags_exclude_filetypes = ['python','sh']
 
 " Maxwell
-" let g:gutentags_cache_dir = expand('/beegfs/desy/user/juncheng/.cache/vim/tags/')
+let g:gutentags_cache_dir = expand('/gpfs/exfel/data/scratch/juncheng/.cache/vim/tags/')
 " OSX and Linux
- let g:gutentags_cache_dir = expand('~/.cache/vim/tags/')
+" let g:gutentags_cache_dir = expand('~/.cache/vim/tags/')
 
 " statusline
 "let g:airline#extensions#gutentags#status = 1

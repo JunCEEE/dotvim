@@ -1,5 +1,5 @@
 # My vim configuration
-Version: 1.0.0
+Version: 1.0.1
 
 ## Dependencies
 ### gtags_cscope and ctags
@@ -34,3 +34,7 @@ cd .vim
 git submodule init
 git submodule update
 ```
+
+## HISTORY
+### 1.0.1 (ongoing)
+- Update Maxwell configuration
