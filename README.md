@@ -9,7 +9,10 @@ sudo apt-get install global ctags
 ```
 
 ### python
-#### conda
+```bash
+pip install vim jedi yapf pynvim
+```
+or
 ```bash
 conda install vim jedi yapf pynvim
 ```
