@@ -10,7 +10,7 @@ sudo apt-get install global ctags
 
 ### python
 ```bash
-pip install vim jedi yapf pynvim
+pip install jedi yapf pynvim
 ```
 or
 ```bash
