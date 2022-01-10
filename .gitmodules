@@ -124,3 +124,6 @@
 [submodule "vim-easymotion"]
 	path = vim-easymotion
 	url = https://github.com/easymotion/vim-easymotion.git
+[submodule "bundle/black"]
+	path = bundle/black
+	url = https://github.com/psf/black.git

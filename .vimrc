@@ -15,8 +15,8 @@ set backspace=indent,eol,start
 "dynamic python
 
 "maxwell
-"set pythonthreedll=/gpfs/exfel/data/user/juncheng/miniconda3/lib/libpython3.7m.so.1.0
-"set pythonthreehome=/gpfs/exfel/data/user/juncheng/miniconda3
+set pythonthreedll=/gpfs/exfel/data/user/juncheng/miniconda3/lib/libpython3.7m.so.1.0
+set pythonthreehome=/gpfs/exfel/data/user/juncheng/miniconda3
 "OSX
 "set pythonthreedll=/Users/juncheng/miniconda3/lib/libpython3.7m.dylib
 "set pythonthreehome=/Users/juncheng/miniconda3
@@ -25,7 +25,7 @@ set backspace=indent,eol,start
 "airline buffer
 let g:airline#extensions#tabline#enabled = 1
 " Close the current buffer and move to the previous one
-nmap <leader>bq :bp <BAR> bd #<CR>
+" nmap <leader>bq :bp <BAR> bd #<CR>
 " Move to the next buffer
 nmap <leader>] :bnext<CR>
 "nmap ]b :bnext<CR>
@@ -33,7 +33,9 @@ nmap <leader>] :bnext<CR>
 nmap <leader>[ :bprevious<CR>
 "nmap [b :bprevious<CR>
 " Unload the previous buffer
-nmap <leader>q :bd<CR>
+" nmap <leader>q :bd<CR>
+" Close the current buffer and move to the previous one
+nmap <leader>bq :bp <BAR> bd #<CR>
 
 "gutentags
 "DEBUG
@@ -208,7 +210,7 @@ autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect
 
 "maxwell
-"let g:python3_host_prog='/gpfs/exfel/data/user/juncheng/miniconda3/bin/python3'
+let g:python3_host_prog='/gpfs/exfel/data/user/juncheng/miniconda3/bin/python3'
 "OSX
 "let g:python3_host_prog='/Users/juncheng/miniconda3/bin/python3'
 
