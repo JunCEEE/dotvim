@@ -127,3 +127,6 @@
 [submodule "bundle/black"]
 	path = bundle/black
 	url = https://github.com/psf/black.git
+[submodule "bundle/ale"]
+	path = bundle/ale
+	url = https://github.com/dense-analysis/ale.git

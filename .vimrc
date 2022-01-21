@@ -242,3 +242,9 @@ if s:extfname==? "tex"
 	" all the figure labels. Very useful!
 	set iskeyword+=:
 endif
+
+"ale linter
+let g:ale_linters = {
+      \   'python': ['flake8', 'pylint']}
+nmap <silent> <leader>aj :ALENext<cr>
+nmap <silent> <leader>ak :ALEPrevious<cr>
