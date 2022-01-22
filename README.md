@@ -10,11 +10,11 @@ sudo apt-get install global ctags
 
 ### python
 ```bash
-pip install jedi yapf pynvim
+pip install jedi yapf pynvim ropevim
 ```
 or
 ```bash
-conda install vim jedi yapf pynvim
+conda install jedi yapf pynvim ropevim
 ```
 
 A new environment
@@ -31,18 +31,35 @@ cd ~ && git clone git@github.com:JunCEEE/dotvim.git
 test -d .vim || mv dotvim .vim
 ```
 
-Update submodules
 ```bash
 cd ~/.vim
 git submodule init
 git submodule update
 ```
 
-Add submodules
+## Add submodules
 ```bash
 cd ~/.vim/bundle
 git submodule add GITHUB_LINK
 ```
+
+## Update submodules
+### Update one submodule
+```bash
+cd ~/.vim/bundle/SUBMODULE
+git pull origin master
+cd ..
+git add -u
+git commit -m "update..."
+```
+
+### Update all submodules
+```bash
+cd ~/.vim/bundle
+git submodule foreach git pull origin master
+git submodule update
+```
+
 
 ## Remove submodules
 0. `mv a/submodule a/submodule_tmp`
@@ -63,3 +80,5 @@ or, if you want to leave it in your working tree and have done step 0.
 ### 1.0.1 (ongoing)
 - Update Maxwell configuration
 - Add [Black](https://github.com/psf/black) plugin
+- Add [ale](https://github.com/dense-analysis/ale.git) for linting
+- Add [rope](https://github.com/python-rope/ropevim.git) for refactoring
