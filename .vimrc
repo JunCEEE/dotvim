@@ -14,6 +14,10 @@ set ignorecase
 set smartcase
 set shiftwidth=4
 set ts=4 "set the number of space of <tab>
+" Press Space to turn off highlighting and clear any message already displayed.
+:set hlsearch
+:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
 
 "param
 "PiCONGPU
@@ -178,6 +182,8 @@ nmap <Leader>f :NERDTree<CR>
 
 "Tagbar
 nmap tb :TagbarOpen fj<CR>
+" Sort in the order of appearance
+let g:tagbar_sort = 0
 
 "PATH change
 command Cwd :cd %:h
