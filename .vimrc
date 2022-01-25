@@ -3,6 +3,18 @@ call pathogen#infect()
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+"Basic setup
+set nocompatible
+set autoindent
+filetype on
+filetype plugin on
+syntax on
+set nu
+set ignorecase
+set smartcase
+set shiftwidth=4
+set ts=4 "set the number of space of <tab>
+
 "param
 "PiCONGPU
 "au BufNewFile,BufRead,BufReadPost *.param set filetype=cpp
@@ -78,17 +90,6 @@ noremap <silent> <leader>si :GscopeFind i <C-R>=expand("<cfile>")<cr><cr>
 
 
 
-"Basic setup
-set nocompatible
-set autoindent
-filetype plugin on
-syntax on
-set nu
-set ignorecase
-set smartcase
-set shiftwidth=4
-set ts=4 "set the number of space of <tab>
-
 "python
 let s:extfname= expand("%:e")
 if s:extfname==? "py"
@@ -105,14 +106,6 @@ if s:extfname==? "py"
 	set softtabstop=4   " Sets the number of columns for a TAB
 
 	set expandtab       " Expand TABs to spaces
-	" jedi
-	let g:jedi#goto_command = "<leader>sg"
-	let g:jedi#goto_assignments_command = "<leader>sa"
-	let g:jedi#goto_definitions_command = ""
-	let g:jedi#documentation_command = "K"
-	let g:jedi#usages_command = "<leader>sc"
-    let g:jedi#completions_command = ""
-	let g:jedi#rename_command = "<leader>r"
 endif
 "Jedi-vim
 " Disable Jedi-vim autocompletion and enable call-signatures options
@@ -123,6 +116,15 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#completions_command = ""
 let g:jedi#show_call_signatures = 0
 let g:jedi#auto_initialization = 1
+" jedi command
+let g:jedi#goto_command = "<leader>sg"
+let g:jedi#goto_assignments_command = "<leader>sa"
+let g:jedi#goto_definitions_command = "<leader>sd"
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>sc"
+let g:jedi#completions_command = ""
+let g:jedi#rename_command = "<leader>r"
+
 
 "fortran
 let s:extfname= expand("%:e")
@@ -178,7 +180,7 @@ nmap <Leader>f :NERDTree<CR>
 nmap tb :TagbarOpen fj<CR>
 
 "PATH change
-command Cdpwd :cd %:h
+command Cwd :cd %:h
 
 "Quick fix
 "jump in cw indow
